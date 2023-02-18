@@ -13,6 +13,11 @@ let oneDollarIs ={
     "GBP": 0.8, // british pound
     "EUR": 1.2 // euro
 }
+let oneYenIs ={
+    "GBP": 0.4,
+    "EUR": 1,
+    "USD": 1.8,
+}
 
 const fromEuroToDollar = (euro) => {
     const result = euro * oneEuroIs.USD
@@ -23,12 +28,17 @@ const fromDollarToYen = (dollar) => {
     const result = dollar * oneDollarIs.JPY
     return result;
 }
+
+const fromYentoPound = (yen) => {
+    const result = yen * oneYenIs.GBP
+    return result;
+}
 // just a console log for ourselves.
 console.log(sum(7,3))
 
 // export the function to be used on other files 
 // (similar to the keyword `export` when using webpack)
-module.exports = { sum, fromEuroToDollar, fromDollarToYen };
+module.exports = { sum, fromEuroToDollar, fromDollarToYen, fromYentoPound};
 
 
 
